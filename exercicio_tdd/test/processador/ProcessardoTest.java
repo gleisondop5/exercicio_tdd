@@ -23,11 +23,20 @@ public class ProcessardoTest {
 		
 	}
 
-	@DisplayName("Testa adicionar boletos ao processador")
+	@DisplayName("Testa quantidade de boletos no processador")
 	@Test
 	public void testQtdBoletos() {
 		int qtdBoletos = processador.getQtdBoletos();	
 		int qtdItens = items.size();
 		assertEquals(qtdItens, qtdBoletos);		
+	}
+	
+	@DisplayName("Testa adicionar boletos no processador")
+	@Test
+	public void testAddBoletos() {
+		int qtdAntes = processador.getQtdBoletos();
+		processador.addBoleto(luz);	
+		int qtdDepois = processador.getQtdBoletos();
+		assertEquals(qtdAntes, qtdDepois - 1);	
 	}
 }
