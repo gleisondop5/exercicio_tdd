@@ -13,14 +13,21 @@ public class FaturaTest {
 	
 	@BeforeEach
 	public void inicializa() {
-		fatura = new Fatura("26/06/2021");
+		fatura = new Fatura("26/06/2021", 1500.00);
 	}
 	
 	@Test
-	@DisplayName("Testa se o boleto possui uma data")
+	@DisplayName("Testa se a fatura possui uma data")
 	public void testData() {
 		String date = fatura.getDate();		
 		assertNotNull(date);		
+	}
+	
+	@Test
+	@DisplayName("Testa se a fatura possui um valor")
+	public void testValorTotal() {
+		double valorTotal = fatura.getValorTotal();		
+		assertNotNull(valorTotal);		
 	}
 
 }
