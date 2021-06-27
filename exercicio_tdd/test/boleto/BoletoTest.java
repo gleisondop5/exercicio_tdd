@@ -1,6 +1,7 @@
 package boleto;
 
 import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
@@ -26,8 +27,8 @@ public class BoletoTest {
 	@Test
 	@DisplayName("Testa se o boleto possui uma data")
 	public void testData() {
-		String data = boleto.getData();		
-		assertNotNull(data);		
+		String date = boleto.getDate();		
+		assertNotNull(date);		
 	}
 	
 	@Test
@@ -36,5 +37,14 @@ public class BoletoTest {
 		double valor = boleto.getValor();		
 		assertNotNull(valor);		
 	}
+	
+	@Test
+	@DisplayName("Testa se o valor do boleto é valido")
+	public void testValidadeValor() {
+		double valor = boleto.getValor();		
+		assertTrue(valor >= 0);		
+	}
+	
+	
 
 }

@@ -3,13 +3,13 @@ package boleto;
 public class Boleto {
 	
 	private long codigo;
-	private String data;
+	private String date;
 	private double valor;
 	
 	public Boleto(long codigo, String data, double valor) {
 		super();
 		this.codigo = codigo;
-		this.data = data;
+		this.date = date;
 		this.valor = valor;
 	}
 	
@@ -17,8 +17,8 @@ public class Boleto {
 		return codigo;
 	}
 	
-	public String getData() {
-		return data;
+	public String getDate() {
+		return date;
 	}
 	
 	public double getValor() {
