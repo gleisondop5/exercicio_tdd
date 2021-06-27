@@ -13,7 +13,7 @@ public class BoletoTest {
 	
 	@BeforeEach
 	public void inicializa() {
-		boleto = new Boleto(123456789, "26/06/2021");
+		boleto = new Boleto(123456789, "26/06/2021", 100.00);
 	}
 	
 	@Test
@@ -28,6 +28,13 @@ public class BoletoTest {
 	public void testData() {
 		String data = boleto.getData();		
 		assertNotNull(data);		
+	}
+	
+	@Test
+	@DisplayName("Testa se o boleto possui um valor")
+	public void testValor() {
+		double valor = boleto.getValor();		
+		assertNotNull(valor);		
 	}
 
 }
