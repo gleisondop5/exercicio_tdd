@@ -13,7 +13,7 @@ public class FaturaTest {
 	
 	@BeforeEach
 	public void inicializa() {
-		fatura = new Fatura("26/06/2021", 1500.00);
+		fatura = new Fatura("26/06/2021", 1500.00, "João Batista");
 	}
 	
 	@Test
@@ -24,10 +24,16 @@ public class FaturaTest {
 	}
 	
 	@Test
-	@DisplayName("Testa se a fatura possui um valor")
+	@DisplayName("Testa se a fatura possui um valor total")
 	public void testValorTotal() {
 		double valorTotal = fatura.getValorTotal();		
 		assertNotNull(valorTotal);		
 	}
 
+	@Test
+	@DisplayName("Testa se a fatura possui um nome")
+	public void testNome() {
+		String nome = fatura.getNome();		
+		assertNotNull(nome);		
+	}
 }
